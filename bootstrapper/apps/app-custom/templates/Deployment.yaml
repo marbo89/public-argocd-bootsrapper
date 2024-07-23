@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-custom-deploy
+  namespace: app-custom
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: app-custom-pod
+  template:
+    metadata:
+      name: app-custom-pod
+    spec:
+      containers:
+        - name: nginx-ctr
+          image: nginx:alpine
+          ports:
+            - containerPort: 80

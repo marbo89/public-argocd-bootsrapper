@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-custom
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: app-custom
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: bootstrapper/apps/app-custom
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD

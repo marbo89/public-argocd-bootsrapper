@@ -1,0 +1,5 @@
+apiVersion: v2
+
+name: app-custom
+version: 0.1.0
+description: A simple custom appliation.
