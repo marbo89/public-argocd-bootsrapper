@@ -1,4 +1,5 @@
 apiVersion: v2
 
 name: public-argocd-bootstrapper
-versiona: 0.1.0
+version: 0.1.0
+description: A simple application to bootstrap the ArgoCD cluster.
